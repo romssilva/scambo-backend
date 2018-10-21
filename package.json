@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/romssilva/scambo-backend#readme",
   "dependencies": {
+    "bcrypt": "^3.0.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-query-int": "^3.0.0",
+    "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
     "mongoose": "^5.2.14",
     "mongoose-pagination": "^1.0.0",
