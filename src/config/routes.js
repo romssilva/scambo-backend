@@ -7,17 +7,24 @@ module.exports = function(server) {
 
     const openApi = express.Router();
     server.use('/oapi', openApi);
+    // openApi.use(auth);
     
     const UserService = require('../api/user/userService');
     UserService.register(openApi, '/user');
     
     const PostService = require('../api/post/postService');
     PostService.register(openApi, '/post');
+    
+    const MessageService = require('../api/message/messageService');
+    MessageService.register(openApi, '/message');
 
     const AuthService = require('../api/user/authService');
     openApi.post('/login', AuthService.login);
     openApi.post('/signup', AuthService.signup);
     openApi.post('/validateToken', AuthService.validateToken);
+
+    const ImageService = require('../api/image/imageService');
+    openApi.post('/image-upload', ImageService.uploadImage);
 
     // Private Routes
 

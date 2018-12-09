@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken')
-const env = require('../.env')
+const jwt = require('jsonwebtoken');
+const env = require('../.env');
 
 module.exports = (req, res, next) => {
     // CORS preflight request
-    if (req.method === 'OPTIONS') {
+    if (['OPTIONS', 'GET'].indexOf(req.method) > -1) {
         next();
     } else {
         const token = req.body.token || req.query.token || req.headers['authorization'];
