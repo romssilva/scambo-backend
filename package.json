@@ -5,7 +5,8 @@
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
-    "production": "pm2 start src/loader.js --name scambo-backend"
+    "production": "pm2 start src/loader.js --name scambo-backend",
+    "debug": "node --inspect src/loader.js"
   },
   "repository": {
     "type": "git",

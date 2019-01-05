@@ -25,6 +25,8 @@ module.exports = function(server) {
 
     const ImageService = require('../api/image/imageService');
     openApi.post('/image-upload', ImageService.uploadImage);
+    openApi.delete('/image-upload', ImageService.deleteImage);
+    openApi.delete('/images-upload', ImageService.deleteMultipleImage);
 
     // Private Routes
 
