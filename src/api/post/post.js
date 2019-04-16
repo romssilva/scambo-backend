@@ -8,7 +8,8 @@ const post = new Schema({
     location: { type: String, required: true },
     images: { type: [Schema.Types.Mixed] },
     value: { type: String },
-    user: { type: Schema.Types.ObjectId, ref: 'User', required: true }
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    date: { type: Date, default: Date.now }
 });
 
 module.exports = restful.model('Post', post);
